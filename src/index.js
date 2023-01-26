@@ -36,6 +36,10 @@ app.use(
   createProxyMiddleware({ target: "http://localhost:3002" })
 );
 
+app.get('/home', (req, res) => {
+  return res.json({message: 'OK'});
+})
+
 const setupAndStartServer = () => {
   app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
